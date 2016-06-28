@@ -1,3 +1,4 @@
+
 from django.utils.translation import ugettext_lazy as _
 
 from pygments import highlight, styles
@@ -6,7 +7,9 @@ from pygments.formatters import HtmlFormatter
 
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
-from models import PygmentsPlugin
+
+from cmsplugin_pygments.models import PygmentsPlugin
+
 
 class CMSPygmentsPlugin(CMSPluginBase):
     model = PygmentsPlugin
