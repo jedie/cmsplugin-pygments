@@ -34,7 +34,10 @@ Edit a source code block:
 
 * v0.8.0
 ** Updates for newer django/django-cms versions and python 3
-* v0.7.0
+** Add README and BSD LICENSE
+** Maintained by Jens Diemer
+* v0.7.0 - 2010
+** First release made by Oyvind Saltvik and uploaded 2010-12-15 to Python Package Index.
 
 
 = donation
