@@ -1,0 +1,53 @@
+= cmsplugin-pygments
+
+Insert source code into django-cms pages, highlighted with Pygments.
+
+Origin sourcecode by [[https://github.com/fivethreeo/cmsplugin-pygments|Oyvind Saltvik]].
+
+
+== Screenshots
+
+Here some screenshots of cmsplugin-pygments:
+
+----
+
+Add a source code block:
+
+{{https://raw.githubusercontent.com/jedie/jedie.github.io/master/screenshots/cmsplugin-pygments/20160630_cmsplugin-pygments_01.PNG|20160630_cmsplugin-pygments_01.PNG}}
+
+----
+
+Edit a source code block:
+
+{{https://raw.githubusercontent.com/jedie/jedie.github.io/master/screenshots/cmsplugin-pygments/20160630_cmsplugin-pygments_02.PNG|20160630_cmsplugin-pygments_02.PNG}}
+
+----
+
+
+== Compatible Matrix
+
+| cmsplugin-pygments | Django-CMS | Django   | Python
+| v0.8.0             | v3.3       | v1.8 LTS | 2.7, 3.4, 3.5
+
+
+== Release History
+
+* v0.8.0
+** Updates for newer django/django-cms versions and python 3
+* v0.7.0
+
+
+= donation
+
+* [[https://www.paypal.me/JensDiemer|paypal.me/JensDiemer]]
+* [[https://flattr.com/submit/auto?uid=jedie&url=https%3A%2F%2Fgithub.com%2Fjedie%2Fcmsplugin-pygments%2F|Flattr This!]]
+* Send [[http://www.bitcoin.org/|Bitcoins]] to [[https://blockexplorer.com/address/1823RZ5Md1Q2X5aSXRC5LRPcYdveCiVX6F|1823RZ5Md1Q2X5aSXRC5LRPcYdveCiVX6F]]
+
+
+= links
+
+| Sourcecode @ GitHub  | [[https://github.com/jedie/cmsplugin-pygments|github.com/jedie/cmsplugin-pygments]]
+| Python Package Index | [[https://pypi.python.org/pypi/cmsplugin-pygments|pypi.python.org/pypi/cmsplugin-pygments]]
+| IRC                  | [[http://www.pylucid.org/permalink/304/irc-channel|#pylucid on freenode.net]]
+
+
