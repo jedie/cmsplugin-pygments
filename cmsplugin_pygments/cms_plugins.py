@@ -19,9 +19,11 @@ class CMSPygmentsPlugin(CMSPluginBase):
     def render(self, context, instance, placeholder):
         style = styles.get_style_by_name(instance.style)
         formatter = HtmlFormatter(linenos=instance.linenumbers, style=style)
-        html = highlight(instance.code,
-			get_lexer_by_name(instance.code_language), formatter
-		)
+        html = highlight(
+            instance.code,
+            get_lexer_by_name(instance.code_language),
+            formatter
+        )
         css = formatter.get_style_defs()
         context.update({'pygments_html': html, 'css': css,
                                         'object':instance,
