@@ -1,13 +1,36 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-from setuptools import setup, find_packages
 import os
-import sys
-import subprocess
 import shutil
+import subprocess
+import sys
+
+from setuptools import setup, find_packages
 
 from cmsplugin_pygments import __version__
+
+PACKAGE_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+# convert creole to ReSt on-the-fly, see also:
+# https://code.google.com/p/python-creole/wiki/UseInSetup
+try:
+    from creole.setup_utils import get_long_description
+except ImportError as err:
+    if "check" in sys.argv or "register" in sys.argv or "sdist" in sys.argv or "--long-description" in sys.argv:
+        raise ImportError("%s - Please install python-creole >= v0.8 - e.g.: pip install python-creole" % err)
+    long_description = None
+else:
+    long_description = get_long_description(PACKAGE_ROOT)
+
+
+def get_authors():
+    try:
+        with open(os.path.join(PACKAGE_ROOT, "AUTHORS"), "r") as f:
+            authors = [l.strip(" *\r\n") for l in f if l.strip().startswith("*")]
+    except Exception as err:
+        authors = "[Error: %s]" % err
+    return authors
 
 
 if "publish" in sys.argv:
@@ -155,27 +178,30 @@ if "publish" in sys.argv:
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-setup(
-    name = "cmsplugin-pygments",
-    version = __version__,
-    url = 'https://github.com/jedie/cmsplugin-pygments',
-    license = 'BSD',
-    description = "django-cms plugin for pygments",
-    author = 'Oyvind Saltvik',
-    author_email = 'oyvind.saltvik@gmail.com',
-    packages = find_packages(),
+
+setup(name="cmsplugin-pygments", version=__version__,
+    url='https://github.com/jedie/cmsplugin-pygments',
+    license='BSD',
+    description="django-cms plugin for pygments",
+    author=get_authors(),
+    maintainer="Jens Diemer",
+    packages=find_packages(),
     install_requires=[
         'pygments',
     ],
-    classifiers = [
-        'Development Status :: 4 - Beta',
-        'Framework :: Django',
+    classifiers=[
+        'Development Status :: 4 - Beta', 'Framework :: Django',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
+        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3.4",
+        "Programming Language :: Python :: 3.5",
+        "Framework :: Django",
+        "Framework :: Django :: 1.8",
         'Topic :: Internet :: WWW/HTTP',
     ],
     include_package_data=True,
-    zip_safe = False
+    zip_safe=False
 )
