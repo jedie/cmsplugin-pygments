@@ -1,1 +1,2 @@
+include AUTHORS LICENSE README.creole MANIFEST.in
 recursive-include cmsplugin_pygments/templates *
