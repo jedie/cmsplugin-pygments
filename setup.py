@@ -211,6 +211,7 @@ setup(name="cmsplugin-pygments", version=__version__,
     long_description=long_description,
     author=get_authors(),
     maintainer="Jens Diemer",
+    author_email="cmsplugin-pygments@jensdiemer.de",
     packages=find_packages(),
     install_requires=[
         'pygments',
